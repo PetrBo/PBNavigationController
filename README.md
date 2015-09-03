@@ -3,6 +3,8 @@ Custom `UINavigationController` with support for combination of transparent and 
 
 ## Screenshot
 
+![example.gif](https://github.com/PetrBo/PBNavigationController/raw/master/Screenshots/example.gif)
+
 ## Installation
 1. Copy `PBNavigationController` folder to your project.
 2. Change class of navigation controller to `PBNavigationController`.
