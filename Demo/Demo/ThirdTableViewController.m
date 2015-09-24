@@ -14,6 +14,8 @@
 
 @implementation ThirdTableViewController
 
+#pragma mark – Lifetime cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -38,8 +40,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 1;
+    return 20;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell3" forIndexPath:indexPath];

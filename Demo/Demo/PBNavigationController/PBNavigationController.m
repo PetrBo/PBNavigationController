@@ -135,13 +135,13 @@ static char kNavigationBarKey;
         if (bottomVC.navigationController.navigationBar
             && !bottomVC.navigationController.navigationBarHidden
             && ![self.transparentViewControllers containsObject:[bottomVC class]]) {
-
+            
             UINavigationBar *bar = [self navigationBarForViewController:bottomVC];
             [bottomVC.view addSubview:bar];
             objc_setAssociatedObject(bottomVC, &kNavigationBarKey, bar, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             [self.pushedControllersWithFakeNavigationBar addObject:bottomVC];
             NSLog(@"%@ : FAKE BAR ADDED!", [bottomVC class]);
-        
+            
             [self setTransparentBackground];
         }
     } else {
