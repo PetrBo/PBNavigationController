@@ -94,7 +94,15 @@ static char kNavigationBarKey;
     CGFloat statusHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
     
     if ([viewController isKindOfClass:[UITableViewController class]]) {
-        frame.origin = CGPointMake(0, -self.navigationBar.frame.size.height - statusHeight);
+        UITableViewController *tableController = (UITableViewController *)viewController;
+        
+        // when is pushed non-transparent VC from transparent one, non-transparent tableView's offset is 0
+        if (tableController.tableView.contentOffset.y == 0.f) {
+            frame.origin = CGPointMake(0, -self.navigationBar.frame.size.height - statusHeight);
+        } else {
+            frame.origin = CGPointMake(0, tableController.tableView.contentOffset.y);
+        }
+        
     } else {
         frame.origin = CGPointMake(0, 0);
     }
